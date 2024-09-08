@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" class="rel">
+</head>
+<body>
+    <main class="login-container">
+        <form class="login-form" action="#" method="post">
+            <h1 class="app-title">CHIT CHAT</h1>
+            <div class="form-fields">
+                <label for="email" class="visually-hidden">Email</label>
+                <input type="email" id="email" name="email" class="input-field email-field" placeholder="yasmineazib@gmail.com" required aria-required="true">
+                
+                <label for="password" class="visually-hidden">Password</label>
+                <input id="password" name="password" type="password" class="input-field" placeholder="Password" required aria-required="true">
+                
+                <button type="submit" class="login-button">LOG IN</button>
+                <div id="login-error" class="error-message"></div>
+                
+                <p class="signup-text">
+                    DON'T HAVE AN ACCOUNT? 
+                    <a href="index.html" class="signup-link">CREATE ONE</a>
+                </p>
+            </div>
+        </form>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "your_api_key",
+            authDomain: "ninja-chat-66e38.firebaseapp.com",
+            projectId: "ninja-chat-66e38",
+            storageBucket: "ninja-chat-66e38.appspot.com",
+            messagingSenderId: "709093810225",
+            appId: "1:709093810225:web:46dce5fe8a80ce0b2ef510"
+        };
+      </script>
+      <script>
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      
+        // Get references to Firestore and Authentication
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+      </script>
+    <script src = "scripts/authentication.js"></script>
+</body>
+</html>

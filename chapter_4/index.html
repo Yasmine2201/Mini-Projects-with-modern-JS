@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" class="rel">
+    <title>Chit Chat Signup</title>
+    
+</head>
+<body>
+    <main class="chit-chat-container">
+        <form class="signup-form">
+            <h1 class="app-title">CHIT CHAT</h1>
+            <div class="form-fields">
+                <label for="username" class="visually-hidden">Username</label>
+                <input type="text" id="username" name="username" class="input-field" placeholder="yasmine_azib" required aria-required="true">
+                
+                <label for="email" class="visually-hidden">Email</label>
+                <input type="email" id="email" name="email" class="input-field email-field" placeholder="yasmineazib@gmail.com" required aria-required="true">
+                
+                <label for="password" class="visually-hidden">Password</label>
+                <input type="password" id="password" name="password" class="input-field" placeholder="........" required aria-required="true" minlength="8">
+                
+                <label for="confirmpassword" class="visually-hidden">Confirm Password</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" class="input-field" placeholder="........" required aria-required="true" minlength="8">
+                
+                <button type="submit" class="create-user-btn">CREATE USER</button>
+                <div id="signup-error" class="error-message"></div>
+            </div>
+            <p class="login-prompt">
+                ALREADY HAVE AN ACCOUNT? <a href="login.html" class="login-link">LOGIN</a>
+            </p>
+        </form>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "your_api_key",
+            authDomain: "ninja-chat-66e38.firebaseapp.com",
+            projectId: "ninja-chat-66e38",
+            storageBucket: "ninja-chat-66e38.appspot.com",
+            messagingSenderId: "709093810225",
+            appId: "1:709093810225:web:46dce5fe8a80ce0b2ef510"
+        };
+      </script>
+      <script>
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      
+        // Get references to Firestore and Authentication
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+      </script>
+    <script src = "scripts/authentication.js"></script>
+</body>
+</html>

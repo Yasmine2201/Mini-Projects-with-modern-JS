@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" class="rel">
+    <title>Chat Section</title>
+</head>
+<body>
+    <section class="chat-container">
+        <div class="chat-content">
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h2 class="sidebar-title">CHIT CHAT</h2>
+                    <ul class="contacts-list">
+                    <!-- Added Dynamically --> 
+                    </ul>
+                    <div class="sidebar-footer">
+                        <span class="logout-container">
+                            <img src="images/logout.png" alt="Logout Icon" class="logout-icon" id="logoutIcon"/>
+                            <span class="tooltip-message">Logout</span>
+                        </span>
+
+                        <div class="footer-user">
+                            <input type="file" id="profilePicInput" style="display: none;" accept="image/*"> 
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <main class="main-chat">
+                <div class="chat-header">
+                    <div class="header-user">
+                       <!-- Added Dynamically-->
+                    </div>
+                </div>
+                <ul class="message-list">
+
+                    <div class = "default-message-container">
+                        <p class = "default-message-invitation"> Please click on one of your contacts to start chatting </p>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e7cb29e3cfebb8313e28170cca31e9fd2b4ba57cdf0c6a78be3cff5e4ae41c4?placeholderIfAbsent=true&apiKey=97e788104cc24eb299ad89350303b36a" alt="Attachment" class="input-icon" />
+                    </div>
+                </ul>
+                <form class="chat-input">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e7cb29e3cfebb8313e28170cca31e9fd2b4ba57cdf0c6a78be3cff5e4ae41c4?placeholderIfAbsent=true&apiKey=97e788104cc24eb299ad89350303b36a" alt="Attachment" class="input-icon" />
+                    <div class="input-wrapper">
+                        <div class="input-container">
+                            <label for="messageInput" class="visually-hidden">Type your message here</label>
+                            <input type="text" id="messageInput" class="input-placeholder" placeholder="Type your message here" aria-label="Type your message here" disabled />
+                            <button type="submit" aria-label="Send message" disabled>
+                                <img src="images/send.png" alt="Send" class="send-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "your_api_key",
+            authDomain: "ninja-chat-66e38.firebaseapp.com",
+            projectId: "ninja-chat-66e38",
+            storageBucket: "ninja-chat-66e38.appspot.com",
+            messagingSenderId: "709093810225",
+            appId: "1:709093810225:web:46dce5fe8a80ce0b2ef510"
+        };
+      </script>
+      <script>
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      
+        // Get references to Firestore and Authentication
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+      </script>
+    <script type="module" src = "scripts/chat.js"></script>
+
+</body>
+</html>
